@@ -19,9 +19,9 @@
                             {% if question.help_text %}
                                 <div cass="text-center">{{ question.help_text }}</div>
                             {% endif %}
-                            {% for applicationchoice in question.applicationchoice_set.all %}
-                                <input type="radio" name="{{ question.pk }}" id="id_{{ question.pk }}" value="{{ applicationchoice.choice_text }}" />
-                                <label for="choice{{ forloop.counter }}">{{ applicationchoice.choice_text }}</label><br />
+                            {% for choice in question.choice.all %}
+                                <input type="radio" name="{{ question.pk }}" id="id_{{ question.pk }}" value="{{ choice.choice_text }}" />
+                                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
                             {% empty %}
                                 <textarea class="form-control" cols="30" id="id_{{ question.pk }}" name="{{ question.pk }}" rows="4"></textarea>
                             {% endfor %}
