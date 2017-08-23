@@ -20,7 +20,7 @@ class ApplicationQuestion(models.Model):
 
 @python_2_unicode_compatible
 class ApplicationChoice(models.Model):
-    question = models.ForeignKey(ApplicationQuestion,on_delete=models.CASCADE,related_name="choice")
+    question = models.ForeignKey(ApplicationQuestion,on_delete=models.CASCADE,related_name="choices")
     choice_text = models.CharField(max_length=200, verbose_name='Choice')
 
     def __str__(self):

@@ -19,7 +19,7 @@
                             {% if question.help_text %}
                                 <div cass="text-center">{{ question.help_text }}</div>
                             {% endif %}
-                            {% for choice in question.choice.all %}
+                            {% for choice in question.choices.all %}
                                 <input type="radio" name="{{ question.pk }}" id="id_{{ question.pk }}" value="{{ choice.choice_text }}" />
                                 <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
                             {% empty %}
